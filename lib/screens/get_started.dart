@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screen_lock/flutter_screen_lock.dart';
+import 'package:hellocash/screens/passcode_screen.dart';
 
 class GetStarted extends StatelessWidget {
   const GetStarted({Key? key}) : super(key: key);
@@ -47,7 +49,12 @@ class GetStarted extends StatelessWidget {
                           primary: Colors.orangeAccent,
                           minimumSize: const Size.fromHeight(50), // NEW
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          screenLock(
+                              context: context,
+                              correctString: "1234",
+                              canCancel: false);
+                        },
                         child: const Text(
                           'Get started',
                           style: TextStyle(fontSize: 18, color: Colors.black),
