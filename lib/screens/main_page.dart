@@ -6,6 +6,7 @@ class mainpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black87,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Center(
@@ -14,6 +15,7 @@ class mainpage extends StatelessWidget {
               child: Column(
                 children: [
                   Card(
+                    color: Colors.black87,
                     child: Column(
                       children: [
                         Row(
@@ -37,17 +39,8 @@ class mainpage extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Icon(
-                                    Icons.qr_code,
+                                    Icons.notifications,
                                     color: Colors.orange,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: CircleAvatar(
-                                    backgroundColor: Colors.orange,
-                                    radius: 12,
-                                    backgroundImage: NetworkImage(
-                                        "https://i.stack.imgur.com/k59em.png"),
                                   ),
                                 ),
                               ],
@@ -60,20 +53,36 @@ class mainpage extends StatelessWidget {
                         Column(
                           children: [
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.wb_sunny_rounded,
+                                  color: Colors.orangeAccent,
+                                ),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  "Good evening!",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20.0),
+                                ),
+                              ],
+                            ),
+                            Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
                                   Icons.remove_red_eye,
-                                  color: Colors.orange,
+                                  color: Colors.grey,
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
                                     "Balance",
                                     style: TextStyle(
-                                      fontSize: 20.0,
-                                    ),
+                                        fontSize: 18.0, color: Colors.grey),
                                   ),
                                 )
                               ],
@@ -81,50 +90,51 @@ class mainpage extends StatelessWidget {
                             const Text(
                               "*********",
                               style: TextStyle(
-                                  fontSize: 20.0,
+                                  fontSize: 24.0,
                                   color: Colors.orange,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.only(
+                              top: 32.0, left: 32.0, right: 32.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Column(
+                              Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "Name",
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-                                  Text(
-                                    "Username",
+                                    "VIP",
                                     style: TextStyle(
                                       fontSize: 20.0,
                                       color: Colors.orange,
                                     ),
-                                  )
+                                  ),
+                                  SizedBox(
+                                    width: 5.0,
+                                  ),
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.orangeAccent,
+                                  ),
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.orangeAccent,
+                                  ),
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.orangeAccent,
+                                  ),
                                 ],
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    "Phone number",
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                    ),
-                                  ),
-                                  Text(
-                                    "********0692",
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      color: Colors.orange,
-                                    ),
+                                  Icon(
+                                    Icons.qr_code,
+                                    color: Colors.white,
                                   )
                                 ],
                               )
@@ -137,55 +147,105 @@ class mainpage extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
+                  Container(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50.0),
+                        ),
+                        primary: Colors.orangeAccent,
+                        minimumSize: const Size.fromHeight(40), // NEW
+                      ),
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.person_add_alt,
+                            color: Colors.black,
+                          ),
+                          SizedBox(
+                            width: 4.0,
+                          ),
+                          const Text(
+                            'Invite your relatives to open their account',
+                            style: TextStyle(fontSize: 17, color: Colors.black),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
                         height: 150.0,
-                        width: 160.0,
+                        width: 180.0,
                         child: Card(
+                          color: Colors.grey[900],
                           elevation: 6.0,
                           child: Column(
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
-                                child: Icon(
-                                  Icons.mobile_screen_share,
-                                  color: Colors.orange,
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.orangeAccent,
+                                  radius: 25,
+                                  child: Icon(
+                                    Icons.send_to_mobile_rounded,
+                                    size: 40,
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ),
                               SizedBox(
-                                height: 20,
+                                height: 10,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text("Send money"),
+                                padding: const EdgeInsets.only(left: 15.0),
+                                child: Text(
+                                  "Send money to HelloCash SMFI",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18.0),
+                                ),
                               )
                             ],
                           ),
                         ),
                       ),
                       Container(
-                        height: 150,
-                        width: 160,
+                        height: 150.0,
+                        width: 180.0,
                         child: Card(
+                          color: Colors.grey[900],
                           elevation: 6.0,
                           child: Column(
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
-                                child: Icon(
-                                  Icons.food_bank,
-                                  color: Colors.orange,
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.orangeAccent,
+                                  radius: 25,
+                                  child: Icon(
+                                    Icons.assured_workload_rounded,
+                                    size: 40,
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ),
                               SizedBox(
-                                height: 20,
+                                height: 10,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text("Send to banks"),
+                                padding: const EdgeInsets.only(left: 15.0),
+                                child: Text(
+                                  "Send money to other banks",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18.0),
+                                ),
                               )
                             ],
                           ),
@@ -199,49 +259,69 @@ class mainpage extends StatelessWidget {
                     children: [
                       Container(
                         height: 150.0,
-                        width: 160.0,
+                        width: 180.0,
                         child: Card(
+                          color: Colors.grey[900],
                           elevation: 6.0,
                           child: Column(
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
-                                child: Icon(
-                                  Icons.mobile_off_sharp,
-                                  color: Colors.orange,
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.orangeAccent,
+                                  radius: 25,
+                                  child: Icon(
+                                    Icons.mobile_friendly_rounded,
+                                    size: 40,
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ),
                               SizedBox(
-                                height: 20,
+                                height: 10,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text("Airtime"),
+                                padding: const EdgeInsets.only(left: 15.0),
+                                child: Text(
+                                  "airtime",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18.0),
+                                ),
                               )
                             ],
                           ),
                         ),
                       ),
                       Container(
-                        height: 150,
-                        width: 160,
+                        height: 150.0,
+                        width: 180.0,
                         child: Card(
+                          color: Colors.grey[900],
                           elevation: 6.0,
                           child: Column(
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
-                                child: Icon(
-                                  Icons.send_and_archive,
-                                  color: Colors.orange,
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.orangeAccent,
+                                  radius: 25,
+                                  child: Icon(
+                                    Icons.payment_outlined,
+                                    size: 40,
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ),
                               SizedBox(
-                                height: 20,
+                                height: 10,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text("Direct Payment"),
+                                padding: const EdgeInsets.only(left: 15.0),
+                                child: Text(
+                                  "Direct payment",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18.0),
+                                ),
                               )
                             ],
                           ),
@@ -255,49 +335,69 @@ class mainpage extends StatelessWidget {
                     children: [
                       Container(
                         height: 150.0,
-                        width: 160.0,
+                        width: 180.0,
                         child: Card(
+                          color: Colors.grey[900],
                           elevation: 6.0,
                           child: Column(
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
-                                child: Icon(
-                                  Icons.money_off,
-                                  color: Colors.orange,
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.orangeAccent,
+                                  radius: 25,
+                                  child: Icon(
+                                    Icons.money,
+                                    size: 40,
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ),
                               SizedBox(
-                                height: 20,
+                                height: 10,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text("Withdraw Money"),
+                                padding: const EdgeInsets.only(left: 15.0),
+                                child: Text(
+                                  "Withdraw",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18.0),
+                                ),
                               )
                             ],
                           ),
                         ),
                       ),
                       Container(
-                        height: 150,
-                        width: 160,
+                        height: 150.0,
+                        width: 180.0,
                         child: Card(
+                          color: Colors.grey[900],
                           elevation: 6.0,
                           child: Column(
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
-                                child: Icon(
-                                  Icons.card_giftcard,
-                                  color: Colors.orange,
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.orangeAccent,
+                                  radius: 25,
+                                  child: Icon(
+                                    Icons.atm,
+                                    size: 40,
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ),
                               SizedBox(
-                                height: 20,
+                                height: 10,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text("Cardless ATM"),
+                                padding: const EdgeInsets.only(left: 15.0),
+                                child: Text(
+                                  "Bankless ATM",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18.0),
+                                ),
                               )
                             ],
                           ),
@@ -314,7 +414,7 @@ class mainpage extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.black,
             icon: Icon(
               Icons.home,
               color: Colors.orange,
@@ -329,16 +429,16 @@ class mainpage extends StatelessWidget {
             label: 'Invite',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.support_agent, color: Colors.grey),
-            label: 'Support',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.info, color: Colors.grey),
-            label: 'Info',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.qr_code, color: Colors.grey),
             label: 'Scan',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.history, color: Colors.grey),
+            label: 'History',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings, color: Colors.grey),
+            label: 'Settings',
           ),
         ],
       ),

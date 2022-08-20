@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screen_lock/flutter_screen_lock.dart';
+import 'package:hellocash/screens/main_page.dart';
 import 'package:hellocash/screens/passcode_screen.dart';
 
 class GetStarted extends StatelessWidget {
@@ -50,10 +51,10 @@ class GetStarted extends StatelessWidget {
                           minimumSize: const Size.fromHeight(50), // NEW
                         ),
                         onPressed: () {
-                          screenLock(
-                              context: context,
-                              correctString: "1234",
-                              canCancel: false);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const mainpage()));
                         },
                         child: const Text(
                           'Get started',

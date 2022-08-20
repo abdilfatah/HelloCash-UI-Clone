@@ -8,7 +8,7 @@ class PasscodeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          children: [Text("Hello World")],
+          children: [Text("Screen lock will be done here soon")],
         ),
       ),
     );
